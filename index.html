@@ -553,6 +553,70 @@
     #architecture { background: #f8f4ff; }
     #risks { background: #fff; }
     #roadmap { background: #ffffff; }
+    #retro { background: #ede9fe; }
+
+    /* ── RETRO KPT ── */
+    .retro-title-bar {
+      border-left: 5px solid var(--purple);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .retro-title-bar .section-title span { color: var(--purple); }
+
+    .kpt-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .kpt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .kpt-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 12px #0000000a;
+    }
+    .kpt-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid;
+    }
+    .kpt-card-header.worked { color: #1d4ed8; border-color: #bfdbfe; }
+    .kpt-card-header.challenge { color: #b91c1c; border-color: #fecaca; }
+    .kpt-card-header.lesson { color: #6d28d9; border-color: #ddd6fe; }
+
+    .kpt-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: #374151;
+      line-height: 1.55;
+      padding: 0.3rem 0;
+    }
+    .kpt-item::before {
+      content: '·';
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+    .kpt-card.worked .kpt-item::before { color: #3b82f6; }
+    .kpt-card.challenge .kpt-item::before { color: #ef4444; }
+    .kpt-card.lesson .kpt-item::before { color: #8b5cf6; }
 
     @media (max-width: 640px) {
       .arch-box { grid-template-columns: 1fr; }
@@ -576,6 +640,7 @@
     <button class="nav-tab" onclick="scrollToSection('techstack')">기술 스택</button>
     <button class="nav-tab" onclick="scrollToSection('architecture')">아키텍처</button>
     <button class="nav-tab" onclick="scrollToSection('roadmap')">로드맵</button>
+    <button class="nav-tab" onclick="scrollToSection('retro')">회고</button>
   </div>
 </nav>
 
@@ -1056,7 +1121,51 @@
     </div>
   </section>
 
-  <!-- ⑩ CLOSING -->
+  <!-- ⑩ RETRO -->
+  <section id="retro">
+    <div class="container">
+      <div class="retro-title-bar">
+        <div class="section-title">프로젝트 <span>회고 및 피드백</span></div>
+      </div>
+
+      <div class="kpt-label">👥 팀 공통 회고 (KPT)</div>
+
+      <div class="kpt-grid">
+        <div class="kpt-card worked">
+          <div class="kpt-card-header worked">👍 What Worked (잘된 점)</div>
+          <div class="kpt-item">실제 육아 경험을 기반으로 진짜 사용자 불편을 타격하는 페르소나 구축</div>
+          <div class="kpt-item">명확한 타겟 설정으로 실제 사용자 니즈가 반영된 서비스 기획</div>
+          <div class="kpt-item">7명 팀원의 원활한 의견 조율과 책임감 있는 역할 수행</div>
+          <div class="kpt-item">기획·데이터 수집·개발·배포까지 전 과정을 직접 경험</div>
+          <div class="kpt-item">GitHub PR 기반 머지 워크플로우를 끝까지 유지</div>
+          <div class="kpt-item">카테고리·월령 필터·검색을 한 화면에서 구현한 Browse 페이지</div>
+          <div class="kpt-item">주제 변경에도 팀원의 빠른 결정으로 결과물 도출</div>
+        </div>
+
+        <div class="kpt-card challenge">
+          <div class="kpt-card-header challenge">⚠️ Challenges (아쉬운 점)</div>
+          <div class="kpt-item">초반 데이터 확보 검토 지연으로 개발 시간 부족</div>
+          <div class="kpt-item">회원가입·로그인·관리자 페이지 등 핵심 기능 완성도 미흡</div>
+          <div class="kpt-item">중간 팀원 드랍으로 공백 발생 및 일정 차질</div>
+          <div class="kpt-item">기획-개발 간 레이아웃 소통 부족으로 재작업 발생</div>
+          <div class="kpt-item">챗봇 상품 보기 버튼이 카테고리에 연결되지 않는 버그</div>
+          <div class="kpt-item">협업 중 의견 충돌 시 주도적으로 방향 정리하지 못한 점</div>
+        </div>
+
+        <div class="kpt-card lesson">
+          <div class="kpt-card-header lesson">💡 Lessons (배운 점)</div>
+          <div class="kpt-item">기획 단계에서 데이터 수집 가능성을 선제적으로 고려하는 것이 완성도를 좌우함</div>
+          <div class="kpt-item">다양한 사이트별 크롤링 전략과 매핑 테이블 활용법 습득</div>
+          <div class="kpt-item">Next.js(useMemo·useRef·useSearchParams)와 Supabase 필터 쿼리 실전 적용</div>
+          <div class="kpt-item">AI를 효과적으로 쓰려면 먼저 기준과 방향을 명확히 세워야 함</div>
+          <div class="kpt-item">좋은 서비스는 명확한 문제 정의와 팀의 공감에서 완성도가 결정됨</div>
+          <div class="kpt-item">커밋은 작게·자주·의미 있는 단위로 — 리뷰와 협업이 쉬워짐</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑪ CLOSING -->
   <section id="closing">
     <div class="container">
       <div class="hero-eyebrow">감사합니다</div>
@@ -1083,7 +1192,7 @@
   }
 
   // Active nav tab on scroll
-  const sections = ['hero','background','intro','problem','features','users','metrics','techstack','architecture','roadmap','closing'];
+  const sections = ['hero','background','intro','problem','features','users','metrics','techstack','architecture','roadmap','retro','closing'];
   const tabs = document.querySelectorAll('.nav-tab');
 
   const io = new IntersectionObserver((entries) => {
