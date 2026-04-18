@@ -575,7 +575,6 @@
     <button class="nav-tab" onclick="scrollTo('metrics')">성과 지표</button>
     <button class="nav-tab" onclick="scrollTo('techstack')">기술 스택</button>
     <button class="nav-tab" onclick="scrollTo('architecture')">아키텍처</button>
-    <button class="nav-tab" onclick="scrollTo('risks')">리스크</button>
     <button class="nav-tab" onclick="scrollTo('roadmap')">로드맵</button>
   </div>
 </nav>
@@ -1017,53 +1016,6 @@
     </div>
   </section>
 
-  <!-- ⑧ RISKS -->
-  <section id="risks">
-    <div class="container">
-      <div class="slide-label trd">TRD · 03 — 리스크 &amp; 대응</div>
-      <div class="section-title">어떤 위험이 있나요?</div>
-      <div class="section-desc">기술적·서비스적 리스크 식별 및 완화 전략</div>
-      <div class="divider"></div>
-
-      <table class="risk-table">
-        <thead>
-          <tr>
-            <th>리스크</th>
-            <th>심각도</th>
-            <th>완화 전략</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Supabase 장애</strong><br><span style="font-size:0.78rem;color:var(--muted)">DB 접근 불가 시 서비스 중단</span></td>
-            <td><span class="severity sev-high">High</span></td>
-            <td>Next.js ISR로 정적 캐시 유지, Supabase SLA 99.9% 의존</td>
-          </tr>
-          <tr>
-            <td><strong>AI 상담 응답 오류</strong><br><span style="font-size:0.78rem;color:var(--muted)">부정확한 제품 추천</span></td>
-            <td><span class="severity sev-high">High</span></td>
-            <td>프롬프트 가이드라인 수립, 면책 고지 UI 추가</td>
-          </tr>
-          <tr>
-            <td><strong>월령 데이터 정확성</strong><br><span style="font-size:0.78rem;color:var(--muted)">잘못 분류된 제품 노출</span></td>
-            <td><span class="severity sev-mid">Mid</span></td>
-            <td>관리자 페이지에서 수동 검수 + 사용자 신고 기능</td>
-          </tr>
-          <tr>
-            <td><strong>모바일 성능</strong><br><span style="font-size:0.78rem;color:var(--muted)">저사양 기기에서 느린 로딩</span></td>
-            <td><span class="severity sev-mid">Mid</span></td>
-            <td>Next.js Image 최적화, 코드 스플리팅, Lazy Loading</td>
-          </tr>
-          <tr>
-            <td><strong>콘텐츠 확장 지연</strong><br><span style="font-size:0.78rem;color:var(--muted)">상품 DB 구축 시간 소요</span></td>
-            <td><span class="severity sev-low">Low</span></td>
-            <td>MVP 단계는 큐레이션 소수 상품으로 시작, 이후 확장</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
   <!-- ⑨ ROADMAP -->
   <section id="roadmap">
     <div class="container">
@@ -1134,7 +1086,7 @@
   }
 
   // Active nav tab on scroll
-  const sections = ['hero','background','intro','problem','features','users','metrics','techstack','architecture','risks','roadmap','closing'];
+  const sections = ['hero','background','intro','problem','features','users','metrics','techstack','architecture','roadmap','closing'];
   const tabs = document.querySelectorAll('.nav-tab');
 
   const io = new IntersectionObserver((entries) => {
