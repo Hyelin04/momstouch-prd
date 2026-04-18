@@ -566,16 +566,16 @@
 <nav>
   <div class="nav-logo">🍼 똑똑한 엄마</div>
   <div class="nav-tabs">
-    <button class="nav-tab active" onclick="scrollTo('hero')">홈</button>
-    <button class="nav-tab" onclick="scrollTo('background')">기획 배경</button>
-    <button class="nav-tab" onclick="scrollTo('intro')">서비스 소개</button>
-    <button class="nav-tab" onclick="scrollTo('problem')">문제 정의</button>
-    <button class="nav-tab" onclick="scrollTo('features')">핵심 기능</button>
-    <button class="nav-tab" onclick="scrollTo('users')">유저 여정</button>
-    <button class="nav-tab" onclick="scrollTo('metrics')">성과 지표</button>
-    <button class="nav-tab" onclick="scrollTo('techstack')">기술 스택</button>
-    <button class="nav-tab" onclick="scrollTo('architecture')">아키텍처</button>
-    <button class="nav-tab" onclick="scrollTo('roadmap')">로드맵</button>
+    <button class="nav-tab active" onclick="scrollToSection('hero')">홈</button>
+    <button class="nav-tab" onclick="scrollToSection('background')">기획 배경</button>
+    <button class="nav-tab" onclick="scrollToSection('intro')">서비스 소개</button>
+    <button class="nav-tab" onclick="scrollToSection('problem')">문제 정의</button>
+    <button class="nav-tab" onclick="scrollToSection('features')">핵심 기능</button>
+    <button class="nav-tab" onclick="scrollToSection('users')">유저 여정</button>
+    <button class="nav-tab" onclick="scrollToSection('metrics')">성과 지표</button>
+    <button class="nav-tab" onclick="scrollToSection('techstack')">기술 스택</button>
+    <button class="nav-tab" onclick="scrollToSection('architecture')">아키텍처</button>
+    <button class="nav-tab" onclick="scrollToSection('roadmap')">로드맵</button>
   </div>
 </nav>
 
@@ -1081,7 +1081,7 @@
 </main>
 
 <script>
-  function scrollTo(id) {
+  function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
 
